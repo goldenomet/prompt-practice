@@ -1,0 +1,12 @@
+{
+  "name": "prompt-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Workplace AI prompting course with a protected learner review backend.",
+  "engines": {
+    "node": ">=20 <25"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

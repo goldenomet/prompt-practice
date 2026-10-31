@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: prompt-practice-course
+    runtime: node
+    plan: 0.5c-512mb
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /healthz
+    disk:
+      name: learner-results
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: DATA_DIR
+        value: /opt/render/project/src/storage
+      - key: AI_COURSE_ADMIN_KEY
+        generateValue: true
